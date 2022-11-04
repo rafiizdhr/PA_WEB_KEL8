@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #eaeaea;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    position: absolute;
+    background: #1A374D;
+    top: 0;
+    left: 0;
+    padding: 0 100px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header .tixid{
+    color: #6998AB;
+    line-height: 60px;
+    font-size: 30px;
+    float: left;
+    font-weight: 700;
+}
+
+header nav{
+    float: right;
+}
+
+header nav ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li{
+    list-style: none;
+}
+
+header nav ul li a{
+    color: #6998AB;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 20px;
+    text-decoration: none;
+    display: block;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: #B1D0E0;
+    background-color: #406882;
+}
+
+.menu-bar{
+    color: #6998AB;
+    float: right;
+    line-height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 650px){
+    header{
+        padding: 0 20px;
+    }
+
+    .menu-bar{
+        display: block;
+    }
+
+    header nav{
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 50px);
+        background: #406882;
+        top: 50px;
+        left: -100%;
+        transition: 0.6s all;
+    }
+
+    header nav.active{
+        left: 0;
+    }
+    
+    header nav ul {
+        display: block;
+        text-align: center;
+    }
+    
+    header nav ul li a:hover{
+        /* border: 1px solid #1A374D; */
+        color: #1A374D;
+
+    }
+}
+
+
+
