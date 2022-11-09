@@ -103,9 +103,9 @@
                 <td><?php echo $film['penayangan']; ?></td>
             </tr>
             <tr>
-                <td>Lama tayang</td>
+                <td>Tanggal tayang</td>
                 <td>:</td>
-                <td><?php echo $film['lama_tayang']; ?></td>
+                <td><?php echo $film['tanggal_tayang']; ?></td>
             </tr>
             <tr>
                 <td>Poster 1</td>

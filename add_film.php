@@ -21,8 +21,9 @@
         $produksi = $_POST['produksi'];
         $casts = $_POST['casts'];
         $durasi = $_POST['durasi'];
+        $deskripsi = $_POST['deskripsi'];
         $penayangan = $_POST['penayangan'];
-        $lama_tayang = $_POST['lama_tayang'];
+        $tanggal_tayang = $_POST['tanggal_tayang'];
         $gambar_1 = $_POST['gambar_1'];
         $gambar_2 = $_POST['gambar_2'];
 
@@ -78,26 +79,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List film | TIX ID</title>
     <style>
-    <?php include('css/admin.css');
+    <?php include('css/add_film.css');
     ?>
     </style>
 </head>
 <body>
     <div class="tixid">TIX ID</div>
 
-    <div class="container-table">
+    <div class="container">
         <form action="" method="post" style="width: 100%;margin:auto">
             <h3>Tambah Film</h3>
+            <div class="line-1"></div>
             <table>
                 <tr>
                     <td>Nama film</td>
                     <td>:</td>
-                    <td><input type="text" name="nama_film"></td>
+                    <td><input type="text" name="nama_film" required></td>
                 </tr>
                 <tr>
                     <td>Jenis film</td>
                     <td>:</td>
-                    <td><input type="text" name="jenis_film"></td>
+                    <td>
+                        <!-- <select name="jenis_film">
+                            <option value="Drama">Drama</option>
+                            <option value="Comedy">Comedy</option>
+                            <option value="Horror">Horror</option>
+                            <option value="Sci-Fi">Sci-Fi</option>
+                            <option value="Action">Action</option>
+                            <option value="Documenter">Documenter</option>
+                            <option value="Animation">Animation</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Thriller">Thriller</option>
+                            <option value="Musikal">Musikal</option>
+                        </select> -->
+                        <input type="checkbox" id="jenis1" name="jenis_film"  value="Drama">
+                        <label for="jenis1"> Drama</label>
+                        <input type="checkbox" id="jenis2" name="jenis_film"  value="Comedy">
+                        <label for="jenis2"> Comedy</label>
+                        <input type="checkbox" id="jenis3" name="jenis_film"  value="Horror">
+                        <label for="jenis3"> Horror</label>
+                        <input type="checkbox" id="jenis4" name="jenis_film"  value="Sci-fi">
+                        <label for="jenis4"> Sci-fi</label>
+                        <input type="checkbox" id="jenis5" name="jenis_film"  value="Action">
+                        <label for="jenis5"> Action</label>
+                        <input type="checkbox" id="jenis6" name="jenis_film"  value="Documenter">
+                        <label for="jenis6"> Documenter</label>
+                        <input type="checkbox" id="jenis7" name="jenis_film"  value="Animation">
+                        <label for="jenis7"> Animation</label><br>
+                        <input type="checkbox" id="jenis8" name="jenis_film"  value="Fantasy">
+                        <label for="jenis8"> Fantasy</label>
+                        <input type="checkbox" id="jenis9" name="jenis_film"  value="Thriller">
+                        <label for="jenis9"> Thriller</label>
+                        <input type="checkbox" id="jenis10" name="jenis_film"  value="Musikal">
+                        <label for="jenis10"> Musikal</label>
+                    </td>
                 </tr>
                 <tr>
                     <td>Produser</td>
@@ -115,19 +150,19 @@
                     <td><input type="text" name="penulis"></td>
                 </tr>
                 <tr>
-                    <td>Produks</td>
+                    <td>Produksi</td>
                     <td>:</td>
                     <td><input type="text" name="produksi"></td>
                 </tr>
                 <tr>
                     <td>Casts</td>
                     <td>:</td>
-                    <td><input type="text" name="casts"></td>
+                    <td><textarea name="description" id="" cols="20" rows="3"></textarea></td>
                 </tr>
                 <tr>
                     <td>Durasi</td>
                     <td>:</td>
-                    <td><input type="text" name="durasi"></td>
+                    <td><input type="number" name="durasi"></td>
                 </tr>
                 <tr>
                     <td>Penayangan</td>
@@ -135,19 +170,32 @@
                     <td><input type="text" name="penayangan"></td>
                 </tr>
                 <tr>
-                    <td>Lama tayang</td>
+                    <td>Tanggal tayang</td>
                     <td>:</td>
-                    <td><input type="text" name="lama_tayang"></td>
+                    <td><input type="date" name="lama_tayang"></td>
                 </tr>
                 <tr>
                     <td>Poster 1</td>
                     <td>:</td>
-                    <td><input type="text" name="gambar_1"></td>
+                    <td><input type="file" name="gambar_1"></td>
                 </tr>
                 <tr>
                     <td>Poster 2</td>
                     <td>:</td>
-                    <td><input type="text" name="gambar_2"></td>
+                    <td><input type="file" name="gambar_2"></td>
+                </tr>
+                <tr>
+                    <td>Deskripsi</td>
+                    <td>:</td>
+                    <td><textarea name="description" id="" cols="30" rows="5"></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <button type="submit" name="tambah">Kirim</button>
+                        <button type="reset" name="reset">Reset</button>
+                    </td>
                 </tr>
             </table>
         </form>

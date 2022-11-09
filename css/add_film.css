@@ -1,0 +1,142 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3f3f3;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+hr{
+    margin-top: -10px;
+}
+
+.tixid{
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 80px;
+    text-align: center;
+    color: #6998AB;
+    font-family: 'Raleway',sans-serif;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: rgb(64, 127, 159);
+    width: 500px;
+    padding: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 3px 20px rgb(0 0 0 / 0.2);
+    /* margin-top: 100px; */
+}
+
+h3{
+    color: #1A374D;
+    font-family:  'Raleway',sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 10px;
+    text-align: center;
+}
+
+.line-1 {
+    height: 1px;
+    background: black;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.input-container{
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.icon{
+    padding: 10px;
+    background: #5DA7DB;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 1px;
+}
+
+.input-field{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border-radius: 5px;
+}
+
+.input-field:focus{
+    border: 2px solid #5DA7DB;
+}
+
+.btn {
+    background-color: green;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.7;
+    border-radius: 5px;
+}
+
+.btn-reg{
+    background-color: green;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    width: 70%;
+    opacity: 0.7;
+    border-radius: 5px;
+    margin: auto;
+    text-align: center;
+    font-size: 13px;
+}
+
+.btn:hover{
+    opacity: 1;
+}
+.btn-reg:hover{
+    opacity: 1;
+}
+
+.to-login{
+    font-size: 17px;
+    color: #1A374D;
+    line-height: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: center;
+}
+
+h4{
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #000; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+}
+
+h4 span { 
+    background:#fff; 
+    padding:0 10px; 
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover{
+    color: yellowgreen;
+    font-weight: 100;
+}
