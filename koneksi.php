@@ -5,8 +5,8 @@ $username = "root";
 $password = "";
 $db_name = "pa_web";
 
-$db = new mysqli($server, $username, $password, $db_name);
+$conn = mysqli_connect($server, $username, $password, $db_name);
 
-if(!$db){
-    die("gagal terhubung");
+if(!$conn){
+    die("gagal terhubung ke : " .mysqli_connect_error());
 }

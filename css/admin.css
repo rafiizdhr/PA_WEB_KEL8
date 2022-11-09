@@ -15,6 +15,12 @@ header{
     box-sizing: border-box;
 }
 
+.kosong{
+    width: 100%;
+    background-color: black;
+    height: 60px;
+}
+
 header .tixid{
     color: #6998AB;
     line-height: 60px;
@@ -96,5 +102,9 @@ header nav ul li a.active {
     }
 }
 
+.container{
+    width: 100%;
+    margin: auto;
+}
 
 

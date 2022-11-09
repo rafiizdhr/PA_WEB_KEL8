@@ -49,6 +49,12 @@
         })
     })
     </script>
+
+    <p>Film yang sedang tayang</p>
+
+    <footer>
+        <p>masih kosong</p>
+    </footer>
 </body>
 
 </html>
