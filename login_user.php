@@ -54,7 +54,7 @@
 </html>
 
 <?php 
-    session_start();
+    
     require 'koneksi.php';
 
     if(isset($_POST['login'])){
@@ -70,6 +70,7 @@
         $username = $row['username'];
 
         if(password_verify($password,$row['psw'])){
+            session_start();
             $_SESSION['login'] = true;
 
 

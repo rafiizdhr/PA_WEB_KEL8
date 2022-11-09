@@ -8,6 +8,13 @@
     //             alert('akses ditolak, silahkan login dulu');
     //             </script>";
     // }
+
+    require 'koneksi.php';
+    $result = mysqli_query($conn, "SELECT * FROM film");
+    $film = [];
+    while($baris = mysqli_fetch_assoc($result)){
+        $film[] = $baris;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,19 +34,21 @@
 
 <body>
     <header>
-        <div class="tixid">TIX ID</div>
-        <nav>
-            <ul>
-                <li><a href="#Home">Home</a></li>
-                <li><a href="#Ticket">Ticket</a></li>
-                <li><a href="#About">About</a></li>
-                <li><a href="#Contact">Contact</a></li>
-                <li><a href="logout_user.php">Sign Out</a></li>
-            </ul>
-        </nav>
-        <div class="menu-bar">
-            <i class="fa-solid fa-bars"></i>
-        </div>
+        <div class="navbar">
+            <div class="tixid">TIX ID</div>
+            <nav>
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#Ticket">Ticket</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                    <li><a href="logout_user.php">Sign Out</a></li>
+                </ul>
+            </nav>
+            <div class="menu-bar">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+     </div>
     </header>
 
     <script>
@@ -50,10 +59,58 @@
     })
     </script>
 
-    <p>Film yang sedang tayang</p>
-
+    <section>
+        <p>Film yang sedang tayang</p>
+    </section>
+    
+    <section id="streaming">
+        <?php 
+            if(isset($film)){foreach($film as $film):
+        ?>
+        <div class="streaming">
+            <div class = "container-1">
+                <div class="poster">
+                    <div class="imeg">
+                        <img src="1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="inside-streaming">
+                    <span>NOW STREAMING</span>
+                    <div class="line1"></div>
+                    <h1><?php echo $film['nama_film']?></h1>
+                    <p><?php echo $film['jenis_film']?></p>
+                    <p>| 2018 | USA | 180 min</p>
+                    <div class="btn1">
+                    <a href="#"><i class="fas fa-play"></i>Watch Now</a>
+                    <a href="#"><i class="fas fa-heart"></i>Watch Later</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php  
+            endforeach; }
+        ?>
+    </section>
     <footer>
-        <p>masih kosong</p>
+        <section class="footer">
+            <div class="inside-footer">
+                <div class="logopart">
+                    <h1>Lm21</h1>
+                </div>
+                <div class="copyright">
+                    <p>copyright &copy <span>Informatika</span>,All Rights Reserved-2021.</p>
+                </div>
+                <div class="socials">
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest"></i>                    
+                </div>
+                <div class="btn4">
+                    <a href="#">Subscribe Now</a>
+                </div>        
+            </div>
+        </section>
     </footer>
 </body>
 

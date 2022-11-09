@@ -1,3 +1,26 @@
+<?php session_start(); 
+        
+           
+    if(isset($_POST['submit_admin'])){
+        
+        $admin = array('admin' => '123');
+        
+        
+        $Username = isset($_POST['username_admin']) ? $_POST['username_admin'] : '';
+        $Password = isset($_POST['password_admin']) ? $_POST['password_admin'] : '';
+        
+                   
+        if (isset($admin[$Username]) && $admin[$Username] == $Password){
+                
+                $_SESSION['UserData']['Username']=$admin[$Username];
+                header("location:main_page_admin.php");
+                exit;
+        } else {
+                $failed = true;
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,25 +40,25 @@
 <body>
     <div class="tixid">TIX ID</div>
     <div class="container">
-        <form action="" method="post" style="width: 100%;margin:auto">
+        <form action="" method="post" name="login_admin" style="width: 100%;margin:auto">
             <h3>Login Admin</h3>
             <div class="line-1"></div>
 
             <!-- input username -->
             <div class="input-container">
                 <i class="fa fa-user icon"></i>
-                <input class="input-field" type="text" name="user" placeholder="Username" autocomplete="off"
+                <input class="input-field" type="text" name="username_admin" placeholder="Username" autocomplete="off"
                     required><br><br>
             </div>
 
             <!-- input password -->
             <div class="input-container">
                 <i class="fa fa-key icon"></i>
-                <input class="input-field" type="password" name="password" placeholder="Password" required><br><br>
+                <input class="input-field" type="password" name="password_admin" placeholder="Password" required><br><br>
             </div>
 
             <!-- tombol login -->
-            <input class="btn" type="submit" name="login" value="Login" style="margin-top: 15px;">
+            <input class="btn" type="submit" name="submit_admin" value="Login" style="margin-top: 15px;">
         </form>
         <br>
         <!-- <span>belum punya akun admin
@@ -45,35 +68,3 @@
 </body>
 
 </html>
-
-<?php 
-    session_start();
-    require 'koneksi.php';
-
-    if(isset($_POST['login'])){
-        $user = $_POST['user'];
-        $password = $_POST['password'];
-
-        $query = "SELECT * FROM akun_admin
-                WHERE username='$user' 
-                OR email='$user'";   
-            
-        $result = $db->query($query);
-        $row = mysqli_fetch_array($result);
-        $username = $row['username'];
-
-        if(password_verify($password,$row['psw'])){
-            $_SESSION['login'] = true;
-
-
-            echo "<script>
-                        alert('selamat datang $username');
-                        document.location.href = 'main_page_admin.php';
-                    </script>";
-        }else{
-            echo "<script>
-                        alert('username dan password salah');
-                </script>";
-        }
-    }
-?>

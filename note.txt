@@ -1,0 +1,54 @@
+dari login_admin.php
+
+<?php 
+    session_start();
+    require 'koneksi.php';
+
+    if(isset($_POST['login'])){
+        $user = $_POST['user'];
+        $password = $_POST['password'];
+
+        $query = "SELECT * FROM akun_admin
+                WHERE username='$user' 
+                OR email='$user'";   
+            
+        $result = $db->query($query);
+        $row = mysqli_fetch_array($result);
+        $username = $row['username'];
+
+        if(password_verify($password,$row['psw'])){
+            $_SESSION['login'] = true;
+
+
+            echo "<script>
+                        alert('selamat datang $username');
+                        document.location.href = 'main_page_admin.php';
+                    </script>";
+        }else{
+            echo "<script>
+                        alert('username dan password salah');
+                </script>";
+        }
+    }
+?>
+
+dari add_film.php
+
+<?php 
+    require "koneksi.php";
+    $film = [];
+    
+    if (isset($_POST['tambah'])){
+        $nama_film = $_POST['nama'];
+    }
+        
+?>
+
+<?php
+    $kul = "SELECT * FROM film";
+    $result = mysqli_query($conn, $kul);
+    $film = [];
+    while($row = mysqli_fetch_assoc($result)){
+        $film[] = $row;
+    }
+?>

@@ -5,7 +5,15 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-header{
+.navbar{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
+    background-color: #eaeaea;
+}
+
+/* header{
     position: absolute;
     background: #1A374D;
     top: 0;
@@ -13,7 +21,7 @@ header{
     padding: 0 100px;
     width: 100%;
     box-sizing: border-box;
-}
+} */
 
 header .tixid{
     color: #6998AB;
@@ -59,6 +67,76 @@ header nav ul li a.active {
     font-size: 24px;
     cursor: pointer;
     display: none;
+}
+
+#streaming{
+    justify-content: space-around;
+    flex-direction: row ;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 3.5rem;
+    width: 100%;
+}
+
+.container-1{
+    padding: 0 20px;
+}
+
+.streaming{
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color:white;
+    align-items: center;
+    margin: auto;
+    background-color: teal;
+    border-radius: 10px;
+}
+
+.inside-streaming{
+    margin: 10px;
+    line-height:2;
+}
+
+.inside-streaming h1{
+    font-size: 20px;
+}
+
+.inside-streaming p{
+    font-size: 15px;
+}
+
+.inside-streaming a{
+    display:flex;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.inside-streaming a i{
+    padding: 8px;
+    text-decoration: none;
+}
+
+span{
+    color: white;
+    font-weight: bold;
+}
+
+.poster{
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.poster img{
+    width: 240px;
+    height: 380px;
+    border-radius: 10px;
 }
 
 @media (max-width: 650px){
