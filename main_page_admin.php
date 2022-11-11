@@ -1,10 +1,26 @@
 <?php 
     require "koneksi.php";
     $film = [];
-    $result = mysqli_query($conn, "SELECT * FROM film");
-    while($row = mysqli_fetch_assoc($result)){
-        $film[] = $row;
+    // $result = mysqli_query($conn, "SELECT * FROM film");
+    // while($row = mysqli_fetch_assoc($result)){
+    //     $film[] = $row;
+    // }
+    
+    if(isset($_GET['search'])){
+        $keyword = $_GET['keyword'];
+        $result = mysqli_query($conn, "SELECT * FROM film WHERE nama_film LIKE '%$keyword%' OR jenis_film LIKE '%$keyword%'");
+        while($row = mysqli_fetch_assoc($result)){
+            $film[] = $row;
+        }
     }
+    else{
+        $result = mysqli_query($conn, "SELECT * FROM film");
+        while($row = mysqli_fetch_assoc($result)){
+            $film[] = $row;
+        }
+    }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -53,6 +69,24 @@
                 <i style="font-size: 20px;" class="fa-solid fa-plus"></i>
             </a>
         </h3>
+        <div class="search">
+            <form action="" method="GET">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="form-outline">
+                                <input type="text" name="keyword" id="keyword" class="form_control">
+                            </div>
+                        </td>
+                        <td>
+                            <button type="submit" class="btn btn-secondary" name="search">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
         <div class="table">
             <table style="margin:auto;width:80%;">
                 <?php if(isset($film)){foreach($film as $film):?>
