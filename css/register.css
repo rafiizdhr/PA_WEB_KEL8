@@ -1,6 +1,7 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f3f3f3;
+    background-image: linear-gradient(to bottom, #1a374d, #214057, #284960, #2f526a, #365b74, #3d637c, #436c84, #4a748c, #517d94, #59869b, #618fa3, #6998ab);
+    background-attachment: fixed;
 }
 
 *{
@@ -29,7 +30,7 @@ hr{
     padding: 35px;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 0 3px 20px rgb(0 0 0 / 0.2);
+    box-shadow: 10px 10px 14px 1px rgb(0 0 0 / 20%);
     /* margin-top: 100px; */
 }
 
@@ -43,10 +44,10 @@ h3{
 }
 
 .line-1 {
-    height: 1px;
+    height: 2px;
     background: black;
-    margin-top: -10px;
-    margin-bottom: 10px;
+    margin-top: -15x;
+    margin-bottom: 30px;
 }
 
 .input-container{
@@ -58,7 +59,7 @@ h3{
 
 .icon{
     padding: 10px;
-    background: #5DA7DB;
+    background-image: linear-gradient(to bottom, #1a374d, #214057, #284960, #2f526a, #365b74, #3d637c, #436c84, #4a748c, #517d94, #59869b, #618fa3, #6998ab);
     color: white;
     min-width: 50px;
     text-align: center;
@@ -78,7 +79,7 @@ h3{
 }
 
 .btn {
-    background-color: green;
+    background-image: linear-gradient(to right top, #05371a, #006029, #008c35, #00bb3e, #12eb43);
     color: white;
     padding: 15px 20px;
     border: none;
@@ -139,4 +140,10 @@ a{
 a:hover{
     color: yellowgreen;
     font-weight: 100;
+}
+
+span .switch-login{
+    display: grid;
+    place-items: center;
+    line-height: 60px;
 }

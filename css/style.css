@@ -1,18 +1,24 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #eaeaea;
+    background-image: linear-gradient(to right top, #000000, #221e20, #3e373c, #59525c, #736f7f);
+    background-attachment: fixed;
     font-family: Arial, Helvetica, sans-serif;
+    color: white;
 }
 
 .navbar{
     display: flex;
-    width: 100%;
+    /* width: 100%; */
     height: auto;
-    justify-content: space-around;
-    background-color: #eaeaea;
+    justify-content: space-between;
+    background-image: linear-gradient(to left top, #6998ab, #547e93, #40657b, #2d4e64, #1a374d);    padding: 0 100px;
+    padding: 0 40px;
 }
-
+header {
+    position:sticky;
+    top: 0;
+}
 /* header{
     position: absolute;
     background: #1A374D;
@@ -29,6 +35,7 @@ header .tixid{
     font-size: 30px;
     float: left;
     font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header nav{
@@ -46,12 +53,13 @@ header nav ul li{
 }
 
 header nav ul li a{
-    color: #6998AB;
+    color: whitesmoke;
     height: 60px;
     line-height: 60px;
     padding: 0 20px;
     text-decoration: none;
     display: block;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 header nav ul li a:hover,
@@ -141,7 +149,7 @@ span{
 
 @media (max-width: 650px){
     header{
-        padding: 0 20px;
+        padding: 0 0px;
     }
 
     .menu-bar{
@@ -151,6 +159,7 @@ span{
     header nav{
         position: absolute;
         width: 100%;
+        height: auto;
         height: calc(100vh - 50px);
         background: #406882;
         top: 50px;
@@ -174,5 +183,11 @@ span{
     }
 }
 
-
+footer{
+    background: rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 5px;
+}
 

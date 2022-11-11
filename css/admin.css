@@ -1,16 +1,24 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #eaeaea;
-    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to right top, #000000, #221e20, #3e373c, #59525c, #736f7f);
+    background-attachment: fixed;
+    color: white;
+    font-family: century 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+    
+.navbar{
+    display: flex;
+    /* width: 100%; */
+    height: auto;
+    justify-content: space-between;
+    background-image: linear-gradient(to left top, #6998ab, #547e93, #40657b, #2d4e64, #1a374d);    padding: 0 100px;
+    padding: 0 40px;
 }
 
-header{
+/* header{
     position: absolute;
-    background: #1A374D;
-    top: 0;
-    left: 0;
-    padding: 0 100px;
+    background-image: linear-gradient(to left top, #6998ab, #547e93, #40657b, #2d4e64, #1a374d);    padding: 0 100px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -19,7 +27,7 @@ header{
     width: 100%;
     background-color: black;
     height: 60px;
-}
+} */
 
 header .tixid{
     color: #6998AB;
@@ -27,6 +35,7 @@ header .tixid{
     font-size: 30px;
     float: left;
     font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header nav{
@@ -44,12 +53,13 @@ header nav ul li{
 }
 
 header nav ul li a{
-    color: #6998AB;
+    color: whitesmoke;
     height: 60px;
     line-height: 60px;
     padding: 0 20px;
     text-decoration: none;
     display: block;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 header nav ul li a:hover,
@@ -69,7 +79,7 @@ header nav ul li a.active {
 
 @media (max-width: 650px){
     header{
-        padding: 0 20px;
+        padding: 0 0px;
     }
 
     .menu-bar{
@@ -102,9 +112,49 @@ header nav ul li a.active {
     }
 }
 
+header {
+    position:sticky;
+    top: 0;
+}
+
+
 .container{
     width: 100%;
     margin: auto;
 }
 
+h3{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 26px;
+    text-align: center;
+    /* float: left; */
+    /* padding: 15px; */
+}
 
+.table{
+    padding: 16 24px;
+    font-size: 20px;
+}
+
+.tambahdata{
+    color: inherit;
+}
+
+.icon{
+    color: white;
+    margin: 10px;
+    padding: 10px;
+}
+
+.geser{
+    padding-left: 10px;
+    padding-top: 3px;
+}
+
+footer{
+    background: rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 5px;
+}

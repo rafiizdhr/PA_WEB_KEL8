@@ -2,12 +2,6 @@
     if( empty(session_id()) && !headers_sent()){
         session_start();
     }
-    // session_start();
-    // if(!isset($_SESSION['login'])){
-    //     echo "<script>
-    //             alert('akses ditolak, silahkan login dulu');
-    //             </script>";
-    // }
 
     require 'koneksi.php';
     $result = mysqli_query($conn, "SELECT * FROM film");
@@ -39,16 +33,15 @@
             <nav>
                 <ul>
                     <li><a href="#Home">Home</a></li>
-                    <li><a href="#Ticket">Ticket</a></li>
-                    <li><a href="#About">About</a></li>
-                    <li><a href="#Contact">Contact</a></li>
+                    <li><a href="tiket.php">Ticket</a></li>
+                    <li><a href="about.php">About</a></li>
                     <li><a href="logout_user.php">Sign Out</a></li>
                 </ul>
             </nav>
             <div class="menu-bar">
                 <i class="fa-solid fa-bars"></i>
             </div>
-     </div>
+        </div>
     </header>
 
     <script>
@@ -62,13 +55,13 @@
     <section>
         <p>Film yang sedang tayang</p>
     </section>
-    
+
     <section id="streaming">
         <?php 
             if(isset($film)){foreach($film as $film):
         ?>
         <div class="streaming">
-            <div class = "container-1">
+            <div class="container-1">
                 <div class="poster">
                     <div class="imeg">
                         <img src="1.jpg" alt="">
@@ -80,10 +73,10 @@
                     <h1><?php echo $film['nama_film']?></h1>
                     <p><?php echo $film['jenis_film']?></p>
                     <p>| 2018 | USA | 180 min</p>
-                    <div class="btn1">
-                    <a href="#"><i class="fas fa-play"></i>Watch Now</a>
-                    <a href="#"><i class="fas fa-heart"></i>Watch Later</a>
-                    </div>
+                    <!-- <div class="btn1">
+                        <a href="#"><i class="fas fa-play"></i>Watch Now</a>
+                        <a href="#"><i class="fas fa-heart"></i>Watch Later</a>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -94,21 +87,15 @@
     <footer>
         <section class="footer">
             <div class="inside-footer">
-                <div class="logopart">
-                    <h1>Lm21</h1>
-                </div>
                 <div class="copyright">
-                    <p>copyright &copy <span>Informatika</span>,All Rights Reserved-2021.</p>
+                    <p>copyright &copy <span>TIX ID</span></p>
                 </div>
-                <div class="socials">
+                <!-- <div class="socials">
                     <i class="fab fa-facebook-square"></i>
                     <i class="fab fa-youtube"></i>
                     <i class="fab fa-instagram"></i>
-                    <i class="fab fa-pinterest"></i>                    
-                </div>
-                <div class="btn4">
-                    <a href="#">Subscribe Now</a>
-                </div>        
+                    <i class="fab fa-pinterest"></i>
+                </div> -->
             </div>
         </section>
     </footer>

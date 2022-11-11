@@ -24,7 +24,7 @@
             <!-- input username -->
             <div class="input-container">
                 <i class="fa fa-user icon"></i>
-                <input class="input-field" type="text" name="user" placeholder="Username" autocomplete="off"
+                <input class="input-field" type="text" name="user" placeholder="Username or Email" autocomplete="off"
                     required><br><br>
             </div>
 
@@ -42,13 +42,8 @@
         <h4><span>Atau</span></h4>
         <!-- <input type="submit" class="btn-reg" value="Buat Akun Baru"> -->
         <a class="btn-reg" href="register_user.php">Buat Akun Baru</a>
-        <!-- ngarah ke registrasi -->
-        <!-- <div class="to-login">
-            <p style="max-width: 500px;margin:auto;font-family:Arial, Helvetica, sans-serif;">belum punya akun ?
-                <a href=" register_user.php">Registrasi</a>
-            </p>
-        </div> -->
     </div>
+    <span><a class="switch-login" href="login_admin.php">Masuk Sebagai Admin</a></span>
 </body>
 
 </html>
@@ -65,7 +60,7 @@
                 WHERE username='$user' 
                 OR email='$user'";   
             
-        $result = $db->query($query);
+        $result = $conn->query($query);
         $row = mysqli_fetch_array($result);
         $username = $row['username'];
 

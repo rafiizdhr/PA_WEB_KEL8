@@ -1,6 +1,5 @@
 <?php session_start(); 
         
-           
     if(isset($_POST['submit_admin'])){
         
         $admin = array('admin' => '123');
@@ -9,7 +8,6 @@
         $Username = isset($_POST['username_admin']) ? $_POST['username_admin'] : '';
         $Password = isset($_POST['password_admin']) ? $_POST['password_admin'] : '';
         
-                   
         if (isset($admin[$Username]) && $admin[$Username] == $Password){
                 
                 $_SESSION['UserData']['Username']=$admin[$Username];
@@ -54,17 +52,16 @@
             <!-- input password -->
             <div class="input-container">
                 <i class="fa fa-key icon"></i>
-                <input class="input-field" type="password" name="password_admin" placeholder="Password" required><br><br>
+                <input class="input-field" type="password" name="password_admin" placeholder="Password"
+                    required><br><br>
             </div>
 
             <!-- tombol login -->
             <input class="btn" type="submit" name="submit_admin" value="Login" style="margin-top: 15px;">
         </form>
         <br>
-        <!-- <span>belum punya akun admin
-            <a href="register_admin.php">Registrasi</a>
-        </span> -->
     </div>
+    <span><a class="switch-login" href="login_user.php">Masuk Sebagai User</a></span>
 </body>
 
 </html>

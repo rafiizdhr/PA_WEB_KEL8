@@ -25,18 +25,19 @@
 
 <body>
     <header>
-        <div class="tixid">TIX ID</div>
-        <nav>
-            <ul>
-                <li><a href="#Home">Home</a></li>
-                <li><a href="#Ticket">Ticket</a></li>
-                <li><a href="#About">About</a></li>
-                <li><a href="#Contact">Contact</a></li>
-                <li><a href="logout_user.php">Logout</a></li>
-            </ul>
-        </nav>
-        <div class="menu-bar">
-            <i class="fa-solid fa-bars"></i>
+        <div class="navbar">
+            <div class="tixid">TIX ID</div>
+            <nav>
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="tiket.php">Ticket</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="logout_admin.php">Logout</a></li>
+                </ul>
+            </nav>
+            <div class="menu-bar">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
     </header>
     <script>
@@ -48,87 +49,111 @@
     </script>
     <div class="kosong"></div>
     <div class="container">
-        <h3>Daftar Film</h3>
-        <a href="add_film.php" class="tambahdata"><i style="font-size: 24px;" class="fa-solid fa-plus"></i></a>
-        <table>
-            <?php if(isset($film)){foreach($film as $film):?>
-            <tr>
-                <td>Id film</td>
-                <td>:</td>
-                <td><?php echo $film['id']; ?></td>
-            </tr>
-            <tr>
-                <td>Nama film</td>
-                <td>:</td>
-                <td><?php echo $film['nama_film']; ?></td>
-            </tr>
-            <tr>
-                <td>Jenis film</td>
-                <td>:</td>
-                <td><?php echo $film['jenis_film']; ?></td>
-            </tr>
-            <tr>
-                <td>Produser</td>
-                <td>:</td>
-                <td><?php echo $film['produser']; ?></td>
-            </tr>
-            <tr>
-                <td>Sutradara</td>
-                <td>:</td>
-                <td><?php echo $film['sutradara']; ?></td>
-            </tr>
-            <tr>
-                <td>Penulis</td>
-                <td>:</td>
-                <td><?php echo $film['penulis']; ?></td>
-            </tr>
-            <tr>
-                <td>Produksi</td>
-                <td>:</td>
-                <td><?php echo $film['produksi']; ?></td>
-            </tr>
-            <tr>
-                <td>Casts</td>
-                <td>:</td>
-                <td><?php echo $film['casts']; ?></td>
-            </tr>
-            <tr>
-                <td>Durasi</td>
-                <td>:</td>
-                <td><?php echo $film['durasi']; ?></td>
-            </tr>
-            <tr>
-                <td>Penayangan</td>
-                <td>:</td>
-                <td><?php echo $film['penayangan']; ?></td>
-            </tr>
-            <tr>
-                <td>Tanggal tayang</td>
-                <td>:</td>
-                <td><?php echo $film['tanggal_tayang']; ?></td>
-            </tr>
-            <tr>
-                <td>Poster 1</td>
-                <td>:</td>
-                <td><img width="100px" src="gambar/<?php echo $film['gambar_1']; ?>" alt=""></td>
-            </tr>
-            <tr>
-                <td>Poster 2</td>
-                <td>:</td>
-                <td><img width="100px" src="gambar/<?php echo $film['gambar_2']; ?>" alt=""></td>
-            </tr>
-            <tr>
-                <td align="center">
-                    <a href="update_film.php?id=<?php echo $film['id_film'];?>"><i class="fa-solid fa-pen"></i></a>
-                    <a href="delete_item.php?id=<?php echo $film['id_film'];?>"><i class=" fa-solid fa-trash"></i></a>
-                </td>
-            </tr>
-            <?php endforeach; }?>
-        </table>
+        <h3>Daftar Film <a href="add_film.php" class="tambahdata">
+                <i style="font-size: 20px;" class="fa-solid fa-plus"></i>
+            </a>
+        </h3>
+        <div class="table">
+            <table style="margin:auto;width:80%;">
+                <?php if(isset($film)){foreach($film as $film):?>
+                <tr>
+                    <td>Id film</td>
+                    <td>:</td>
+                    <td class="geser"><?php echo $film['id_film']; ?></td>
+                </tr>
+                <tr>
+                    <td>Nama film</td>
+                    <td>:</td>
+                    <td class="geser"><?php echo $film['nama_film']; ?></td>
+                </tr>
+                <tr>
+                    <td>Jenis film</td>
+                    <td>:</td>
+                    <td class="geser"><?php echo $film['jenis_film']; ?></td>
+                </tr>
+                <tr>
+                    <td>Produser</td>
+                    <td>:</td>
+                    <td class="geser"><?php echo $film['produser']; ?></td>
+                </tr>
+                <tr>
+                    <td>Sutradara</td>
+                    <td>:</td>
+                    <td class="geser"><?php echo $film['sutradara']; ?></td>
+                </tr>
+                <tr>
+                    <td>Penulis</td>
+                    <td>:</td>
+                    <td class="geser"><?php echo $film['penulis']; ?></td>
+                </tr>
+                <tr>
+                    <td>Produksi</td>
+                    <td>:</td>
+                    <td class="geser"><?php echo $film['produksi']; ?></td>
+                </tr>
+                <tr>
+                    <td>Casts</td>
+                    <td>:</td>
+                    <td class="geser"><?php echo $film['casts']; ?></td>
+                </tr>
+                <tr>
+                    <td>Durasi</td>
+                    <td>:</td>
+                    <td class="geser"><?php echo $film['durasi']." menit"; ?></td>
+                </tr>
+                <tr>
+                    <td>Penayangan</td>
+                    <td>:</td>
+                    <td class="geser"><?php echo $film['penayangan']; ?></td>
+                </tr>
+                <tr>
+                    <td>Tanggal tayang</td>
+                    <td>:</td>
+                    <td class="geser"><?php echo $film['tanggal_tayang']; ?></td>
+                </tr>
+                <tr>
+                    <td>Poster film</td>
+                    <td>:</td>
+                    <td class="geser"><img width="180px" src="gambar/<?php echo $film['gambar_1']; ?>" alt="poster1">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Deskripsi</td>
+                    <td>:</td>
+                    <td class="geser"><?php echo $film['deskripsi']; ?></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td align="center">
+                        <a class="icon" href="update_film.php?id_film=<?php echo $film['id_film'];?>">
+                            <i style="font-size: 20px;" class="fa-solid fa-pen"></i>
+                        </a>
+                        <a class="icon" href="delete_film.php?id_film=<?php echo $film['id_film'];?>">
+                            <i style="font-size: 20px;" class="fa-solid fa-trash"></i>
+                        </a>
+                        <br><br><br>
+                    </td>
+                </tr>
+                <?php endforeach; }?>
+            </table>
+        </div>
     </div>
-    <!-- <footer>
-        <p>masih kosong</p>
-    </footer> -->
+    <footer>
+        <section class="footer">
+            <div class="inside-footer">
+                <div class="copyright">
+                    <p>copyright &copy <span>TIX ID</span></p>
+                </div>
+                <!-- <div class="socials">
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest"></i>
+                </div> -->
+            </div>
+        </section>
+    </footer>
 </body>
 
 </html>
