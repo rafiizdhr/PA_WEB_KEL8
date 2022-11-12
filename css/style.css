@@ -4,7 +4,7 @@ body {
     background-image: linear-gradient(to right top, #000000, #221e20, #3e373c, #59525c, #736f7f);
     background-attachment: fixed;
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    
 }
 
 .navbar{
@@ -77,56 +77,109 @@ header nav ul li a.active {
     display: none;
 }
 
-#streaming{
-    justify-content: space-around;
-    flex-direction: row ;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 3.5rem;
-    width: 100%;
+.container{
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
 }
+
+.container .products-container{
+    display: grid;
+    justify-content: center;
+    /* grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); */
+    /* gap: 2rem; */
+}
+
+.container .products-container .product{
+    text-align: center;
+    padding:3rem 2rem;
+    background: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    outline: .1rem solid #ccc;
+    /* outline-offset: -1.5rem; */
+    cursor: pointer;
+}
+
+.container .products-container .product:hover{
+    outline: .2rem solid #222;
+    outline-offset: 0;
+}
+
+.container .products-container .product h3{
+    color:#444;
+}
+
+.container .products-container .product:hover h3{
+    color:#347eb0;
+}
+
+.container .products-container .product .price{
+    font-size: 18px;
+    color:#444;
+}
+.products-preview{
+    position: fixed;
+    top:0; left:0;
+    min-height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.products-preview .preview{
+    display: none;
+    padding:2rem;
+    background: #fff;
+    position: relative;
+    margin:2rem;
+    width: 1000px;
+}
+
+.products-preview .preview.active{
+    display: inline-block;
+}
+
+.products-preview .preview img{
+    height: 30rem;
+}
+
+.products-preview .preview .fa-times{
+    position: absolute;
+    top:1rem; right:1.5rem;
+    cursor: pointer;
+    color:#444;
+    font-size: 4rem;
+}
+
+.products-preview .preview .buttons{
+    display: flex;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.products-preview .preview .buttons a{
+    padding:5px;
+    font-size: 20px;
+    color:#444;
+    border:1px solid #444;
+    text-decoration: none;
+    text-transform: capitalize;
+    justify-content: center;
+}
+
+.products-preview .preview .buttons a.buy:hover{
+    background: #444;
+    color:#fff;
+}
+
 
 .container-1{
     padding: 0 20px;
 }
 
-.streaming{
-    max-width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    color:white;
-    align-items: center;
-    margin: auto;
-    background-color: teal;
-    border-radius: 10px;
-}
 
-.inside-streaming{
-    margin: 10px;
-    line-height:2;
-}
-
-.inside-streaming h1{
-    font-size: 20px;
-}
-
-.inside-streaming p{
-    font-size: 15px;
-}
-
-.inside-streaming a{
-    display:flex;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-}
-
-.inside-streaming a i{
-    padding: 8px;
-    text-decoration: none;
-}
 
 span{
     color: white;
@@ -151,11 +204,11 @@ span{
     header{
         padding: 0 0px;
     }
-
+    
     .menu-bar{
         display: block;
     }
-
+    
     header nav{
         position: absolute;
         width: 100%;
@@ -166,7 +219,7 @@ span{
         left: -100%;
         transition: 0.6s all;
     }
-
+    
     header nav.active{
         left: 0;
     }
@@ -179,7 +232,7 @@ span{
     header nav ul li a:hover{
         /* border: 1px solid #1A374D; */
         color: #1A374D;
-
+        
     }
 }
 
@@ -191,3 +244,6 @@ footer{
     padding: 5px;
 }
 
+.geser{
+    padding-left: 17px;
+}
