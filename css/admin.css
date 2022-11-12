@@ -22,7 +22,6 @@ body {
     width: 100%;
     box-sizing: border-box;
 }
-
 .kosong{
     width: 100%;
     background-color: black;
@@ -157,4 +156,12 @@ footer{
     justify-content: center;
     margin-top: 30px;
     padding: 5px;
+}
+
+form{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
 }
