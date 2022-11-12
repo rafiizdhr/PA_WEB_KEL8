@@ -20,6 +20,7 @@
     <title>TIX ID</title>
     <script src="https://kit.fontawesome.com/6ce21f9da1.js" crossorigin="anonymous"></script>
     <script src="js/jquery.js"></script>
+    <script src="js/script.js" defer></script>
     <style>
     <?php include('css/style.css');
     ?>
@@ -56,27 +57,71 @@
         <p>Film yang sedang tayang</p>
     </section>
 
-    <section id="streaming">
+    <!-- film card preview -->
+    <section>
         <?php 
-            if(isset($film)){foreach($film as $film):
+        if(isset($film)){foreach($film as $film):
         ?>
-        <div class="streaming">
-            <div class="container-1">
-                <div class="poster">
-                    <div class="imeg">
-                        <img src="1.jpg" alt="">
-                    </div>
+        <div class="container">
+            <div class="products-container">
+                <div class="product">
+                    <img width="200px" src="gambar/<?php echo $film['gambar_1']; ?>" alt="">
+                    <h3><?php echo $film['nama_film']?></h3>
+                    <div class="price"><?php echo $film['jenis_film']?></div>
                 </div>
-                <div class="inside-streaming">
-                    <span>NOW STREAMING</span>
-                    <div class="line1"></div>
-                    <h1><?php echo $film['nama_film']?></h1>
-                    <p><?php echo $film['jenis_film']?></p>
-                    <p>| 2018 | USA | 180 min</p>
-                    <!-- <div class="btn1">
-                        <a href="#"><i class="fas fa-play"></i>Watch Now</a>
-                        <a href="#"><i class="fas fa-heart"></i>Watch Later</a>
-                    </div> -->
+            </div>
+        </div>
+        <div class="products-preview">
+            <div class="preview">
+                <i class="fas fa-times"></i>
+                <table>
+                    <tr>
+                        <td>Nama film</td>
+                        <td class="geser"><?php echo $film['nama_film']?></td>
+                    </tr>
+                    <tr>
+                        <td>Jenis film</td>
+                        <td class="geser">class="geser"<?php echo $film['jenis_film']?></td>
+                    </tr>
+                    <tr>
+                        <td>Produser</td>
+                        <td class="geser"><?php echo $film['produser']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Sutradara</td>
+                        <td class="geser"><?php echo $film['sutradara']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Penulis</td>
+                        <td class="geser"><?php echo $film['penulis']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Produksi</td>
+                        <td class="geser"><?php echo $film['produksi']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Casts</td>
+                        <td class="geser"><?php echo $film['casts']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Durasi</td>
+                        <td class="geser"><?php echo $film['durasi']." menit"; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Penayangan</td>
+                        <td class="geser"><?php echo $film['penayangan']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Tanggal tayang</td>
+                        <td class="geser"><?php echo $film['tanggal_tayang']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Deskripsi</td>
+                        <td class="geser"><?php echo $film['deskripsi']; ?></td>
+                    </tr>
+                </table>
+                <div class="buttons">
+                    <a href="#" class="buy">pesan tiket</a>
                 </div>
             </div>
         </div>
@@ -85,7 +130,7 @@
         ?>
     </section>
     <footer>
-        <section class="footer">
+        <section class=" footer">
             <div class="inside-footer">
                 <div class="copyright">
                     <p>copyright &copy <span>TIX ID</span></p>
