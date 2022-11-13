@@ -32,36 +32,42 @@
         </div>
     </header>
 
-    <div class = "section">
-        <div class= "container">
-            <div class= "content-section">
-                <div class = "title"> 
+    <div class="section">
+        <div class="container">
+            <div class="content-section">
+                <div class="title">
                     <h1> ABOUT TIX ID </h1>
                 </div>
-                <div class= "content">
-                <h3> TIX ID adalah website layanan hiburan terdepan di Indonesia yang memberikan pengalaman baru dalam pembelian tiket film dan hiburan lainnya. Dengan TIX ID, pengguna dapat mengetahui informasi tentang film terkini serta melakukan pemesanan tiket bioskop dengan mudah, cepat, dan aman. </h3>
+                <div class="content">
+                    <h3> TIX ID adalah website layanan hiburan terdepan di Indonesia yang memberikan pengalaman baru
+                        dalam pembelian tiket film dan hiburan lainnya. Dengan TIX ID, pengguna dapat mengetahui
+                        informasi tentang film terkini serta melakukan pemesanan tiket bioskop dengan mudah, cepat, dan
+                        aman. </h3>
                     <h1>ABOUT US</h1>
-                    <div class= "content">
-                <h3>Kami adalah mahasiswa semester 3 di Prodi Informatika Universitas Mulawarman yang membuat website untuk memenuhi projek akhir kami.Kelompok kami beranggotakan Diky Dwicandra dengan NIM 2109106053, Rafi Izdihaar dengan NIM 2109106053 dan Wanda Nurhaliza dengan NIM 2109106055.</h3>
-                <div class="button">
-                    <a href="">Read More</a>
+                    <div class="content">
+                        <h3>Kami adalah mahasiswa semester 3 di Prodi Informatika Universitas Mulawarman yang membuat
+                            website untuk memenuhi projek akhir kami.Kelompok kami beranggotakan Diky Dwicandra dengan
+                            NIM 2109106053, Rafi Izdihaar dengan NIM 2109106053 dan Wanda Nurhaliza dengan NIM
+                            2109106055.</h3>
+                        <div class="button">
+                            <a href="">Read More</a>
+                        </div>
+                    </div>
+                    <div class="social">
+                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/rafiizdhr/PA_WEB_KEL8"><i class="fab fa-github"></i></a>
+
+
+                    </div>
+                </div>
+                <div class="image-section">
+                    <img src="">
                 </div>
             </div>
-            <div class= "social">
-                <a href=""><i class="fab fa-facebook-f"></i></a>
-                <a href=""><i class="fab fa-twitter"></i></a>
-                <a href=""><i class="fab fa-instagram"></i></a>
-                <a href="https://github.com/rafiizdhr/PA_WEB_KEL8"><i class="fab fa-github"></i></a>
-
-
-            </div>
         </div>
-        <div class= "image-section">
-            <img src="">
-        </div>
-    </div>
-    </div>
-    <!-- <div class = "aboutus">
+        <!-- <div class = "aboutus">
             <center> 
                 <a class = "tittle2"> <br> <b> ABOUT US </b> <br> <br> </a> 
                 <a class = "bio2"> Kami adalah mahasiswa semester 3 di Prodi Informatika Universitas Mulawarman yang membuat website untuk memenuhi projek akhir kami. <br>
@@ -71,30 +77,24 @@
             </center>
     </div> -->
 
-    <script>
-    $(document).ready(function() {
-        $(".menu-bar").click(function() {
-            $('nav').toggleClass('active');
+        <script>
+        $(document).ready(function() {
+            $(".menu-bar").click(function() {
+                $('nav').toggleClass('active');
+            })
         })
-    })
-    </script>
+        </script>
 
 
-    <footer>
-        <section class="footer">
-            <div class="inside-footer">
-                <div class="copyright">
-                    <p>copyright &copy <span>TIX ID</span></p>
+        <footer>
+            <section class="footer">
+                <div class="inside-footer">
+                    <div class="copyright">
+                        <p>copyright &copy <span>TIX ID</span></p>
+                    </div>
                 </div>
-                <!-- <div class="socials">
-                    <i class="fab fa-facebook-square"></i>
-                    <i class="fab fa-youtube"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-pinterest"></i>
-                </div> -->
-            </div>
-        </section>
-    </footer>
+            </section>
+        </footer>
 </body>
 
 </html>

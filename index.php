@@ -33,7 +33,7 @@
             <div class="tixid">TIX ID</div>
             <nav>
                 <ul>
-                    <li><a href="#Home">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="tiket.php">Ticket</a></li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="logout_user.php">Sign Out</a></li>
@@ -58,7 +58,7 @@
     </section>
 
     <!-- film card preview -->
-    <section  id="streaming">
+    <section id="streaming">
         <?php 
         if(isset($film)){foreach($film as $film):
         ?>
@@ -81,7 +81,7 @@
                     </tr>
                     <tr>
                         <td>Jenis film</td>
-                        <td class="geser">class="geser"<?php echo $film['jenis_film']?></td>
+                        <td class="geser"><?php echo $film['jenis_film']?></td>
                     </tr>
                     <tr>
                         <td>Produser</td>
