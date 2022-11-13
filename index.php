@@ -58,7 +58,7 @@
     </section>
 
     <!-- film card preview -->
-    <section>
+    <section  id="streaming">
         <?php 
         if(isset($film)){foreach($film as $film):
         ?>

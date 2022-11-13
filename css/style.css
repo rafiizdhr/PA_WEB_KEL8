@@ -76,6 +76,14 @@ header nav ul li a.active {
     cursor: pointer;
     display: none;
 }
+#streaming{
+    justify-content: space-around;
+    flex-direction: row ;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 3.5rem;
+    width: 100%;
+}
 
 .container{
     max-width: 500px;
