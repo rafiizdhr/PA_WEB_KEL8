@@ -42,7 +42,6 @@ else{
                 <ul>
                     <li><a href="main_page_admin.php">Home</a></li>
                     <li><a href="bioskop.php">Bioskop</a></li>
-                    <!-- <li><a href="#">About</a></li> -->
                     <li><a href="logout_admin.php">Logout</a></li>
                 </ul>
             </nav>
@@ -60,7 +59,7 @@ else{
     </script>
 
     <div class="container">
-        <h3>Daftar Film <a href="add_bioskop.php" class="tambahdata">
+        <h3>Daftar Bioskop <a href="add_bioskop.php" class="tambahdata">
                 <i style="font-size: 20px;" class="fa-solid fa-plus"></i>
             </a>
         </h3>

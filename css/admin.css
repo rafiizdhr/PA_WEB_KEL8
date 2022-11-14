@@ -16,11 +16,9 @@ body {
     padding: 0 40px;
 }
 
-/* header{
-    position: absolute;
-    background-image: linear-gradient(to left top, #6998ab, #547e93, #40657b, #2d4e64, #1a374d);    padding: 0 100px;
-    width: 100%;
-    box-sizing: border-box;
+header {
+    position:sticky;
+    top: 0;
 }
 
 .kosong{

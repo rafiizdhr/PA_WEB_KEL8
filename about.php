@@ -49,21 +49,13 @@
                             website untuk memenuhi projek akhir kami.Kelompok kami beranggotakan Diky Dwicandra dengan
                             NIM 2109106053, Rafi Izdihaar dengan NIM 2109106053 dan Wanda Nurhaliza dengan NIM
                             2109106055.</h3>
-                        <div class="button">
-                            <a href="">Read More</a>
-                        </div>
                     </div>
                     <div class="social">
-                        <a href=""><i class="fab fa-facebook-f"></i></a>
-                        <a href=""><i class="fab fa-twitter"></i></a>
-                        <a href=""><i class="fab fa-instagram"></i></a>
                         <a href="https://github.com/rafiizdhr/PA_WEB_KEL8"><i class="fab fa-github"></i></a>
-
-
                     </div>
                 </div>
                 <div class="image-section">
-                    <img src="">
+                    <!-- <img src="gambar/avenger.png"> -->
                 </div>
             </div>
         </div>

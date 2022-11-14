@@ -47,7 +47,6 @@
                 <ul>
                     <li><a href="main_page_admin.php">Home</a></li>
                     <li><a href="bioskop.php">Bioskop</a></li>
-                    <!-- <li><a href="#">About</a></li> -->
                     <li><a href="logout_admin.php">Logout</a></li>
                 </ul>
             </nav>

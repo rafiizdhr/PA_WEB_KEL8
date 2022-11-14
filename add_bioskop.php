@@ -2,24 +2,43 @@
 
 <?php
     require "koneksi.php";
-    $film = [];
+    $bioskop = [];
     
     if (isset($_POST['tambah'])){
-        $kul = "SELECT * FROM film";
+        $kul = "SELECT * FROM bioskop";
         $result = mysqli_query($conn, $kul);
-        $film = [];
+        $bioskop = [];
         while($row = mysqli_fetch_assoc($result)){
-            $film[] = $row;
+            $bioskop[] = $row;
         }
 
-        $id_film = count($film)+1;
+        $id_bioskop = count($bioskop)+1;
         $nama_bioskop = htmlspecialchars($_POST['nama_bioskop']);
         $jam_1 = htmlspecialchars($_POST['jam_1']);
         $jam_2 = htmlspecialchars($_POST['jam_2']);
         $jam_3 = htmlspecialchars($_POST['jam_3']);
-        $hari = htmlspecialchars($_POST['hari']);
+        $hari = $_POST['hari'];
         $tanggal = $_POST['tanggal'];
 
+        $sql = "INSERT INTO bioskop VALUES ('$id_bioskop','$nama_bioskop','$jam_1','$jam_2','$jam_3','$hari','$tanggal')";
+
+        $result = mysqli_query($conn, $sql);
+                
+        if ($result){
+            echo "
+            <script> 
+                alert ('data berhasil ditambah');
+                document.location.href = 'bioskop.php';
+            </script>";
+        } else {
+            echo "
+            <script> 
+                alert ('data gagal ditambah');
+                document.location.href = 'add_bioskop.php';
+            </script>";
+        }
+        
+    }
 ?>
 
 <!DOCTYPE html>
@@ -46,8 +65,7 @@
             <nav>
                 <ul>
                     <li><a href="main_page_admin.php">Home</a></li>
-                    <li><a href="tiket.php">Ticket</a></li>
-                    <li><a href="about.php">About</a></li>
+                    <li><a href="bioskop.php">Bioskop</a></li>
                     <li><a href="logout_admin.php">Logout</a></li>
                 </ul>
             </nav>
@@ -78,13 +96,12 @@
                     <td><input type="text" name="nama_bioskop" required></td>
                 </tr>
                 <tr>
-
                     <td>jam_1</td>
                     <td>:</td>
                     <td><input type="time" name="jam_1"></td>
                 </tr>
                 <tr>
-                    <td>$jam_2</td>
+                    <td>jam_2</td>
                     <td>:</td>
                     <td><input type="time" name="jam_2"></td>
                 </tr>
@@ -96,15 +113,36 @@
                 <tr>
                     <td>Hari</td>
                     <td>:</td>
-                    <td><input type="date" name="produksi"></td>
+                    <td>
+                        <select name="hari" id="">
+                            <option value="Senin">Senin</option>
+                            <option value="Selasa">Selasa</option>
+                            <option value="Rabu">Rabu</option>
+                            <option value="Kamis">Kamis</option>
+                            <option value="Jumat">Jumat</option>
+                            <option value="Sabtu">Sabtu</option>
+                            <option value="Minggu">Minggu</option>
+                        </select>
+                    </td>
                 </tr>
-            
+                <tr>
+                    <td>Tanggal</td>
+                    <td>:</td>
+                    <td><input type="date" name="tanggal"></td>
+                </tr>
+                <tr>
                     <td></td>
                     <td></td>
                     <td>
                         <button type="submit" name="tambah">Kirim</button>
                         <button type="reset" name="reset">Reset</button>
                     </td>
+                </tr>
+                <!-- <input type="hidden" name="hari" value=<?=hari_ini();?>> -->
+                <!-- <input type="hidden" name="tanggal" value=<?php strtotime("today");?>> -->
+                </tr>
+                </td>
+                </tr>
                 </tr>
             </table>
         </form>

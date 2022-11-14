@@ -12,6 +12,11 @@ hr{
     margin-top: -10px;
 }
 
+header {
+    position:sticky;
+    top: 0;
+}
+
 .tixid{
     font-size: 36px;
     font-weight: 700;
