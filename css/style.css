@@ -76,6 +76,7 @@ header nav ul li a.active {
     cursor: pointer;
     display: none;
 }
+
 #streaming{
     justify-content: space-around;
     flex-direction: row ;
@@ -275,3 +276,20 @@ font-family: Arial, Helvetica, sans-serif;
 margin-top: 100px;
 font-family: Arial, Helvetica, sans-serif;
 }
+
+.bentuk-poster{
+    width: 200px;
+    height: 250px;
+    object-fit: scale-downp;
+}
+
+.sedangtayang{
+    width : 90%;
+    margin: auto;
+    padding: 20px;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+/* ticket */

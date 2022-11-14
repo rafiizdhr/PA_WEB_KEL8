@@ -54,80 +54,85 @@
     </script>
 
     <section>
-        <p>Film yang sedang tayang</p>
+        <p class="sedangtayang">Film yang sedang tayang</p>
     </section>
 
     <!-- film card preview -->
     <section id="streaming">
         <?php 
-        if(isset($film)){foreach($film as $film):
+        $i=1;
+        if(isset($film)){foreach($film as $flm):
         ?>
         <div class="container">
             <div class="products-container">
-                <div class="product">
-                    <img width="200px" src="gambar/<?php echo $film['gambar_1']; ?>" alt="">
-                    <h3><?php echo $film['nama_film']?></h3>
-                    <div class="price"><?php echo $film['jenis_film']?></div>
+                <div class="product" data-name=<?php echo $i ?>>
+                    <img width="200px" src="gambar/<?php echo $flm['gambar_1']; ?>" alt="" class="bentuk-poster">
+                    <h3><?php echo $flm['nama_film']?></h3>
+                    <div class="price"><?php echo $flm['jenis_film']?></div>
                 </div>
             </div>
         </div>
+        <?php $i++; endforeach;} ?>
         <div class="products-preview">
-            <div class="preview">
+            <?php  $i=1; if(isset($film)){foreach($film as $flm): ?>
+            <div class=" preview" data-target=<?php echo $i ?>>
                 <i class="fas fa-times"></i>
                 <table>
                     <tr>
                         <td>Nama film</td>
-                        <td class="geser"><?php echo $film['nama_film']?></td>
+                        <td class="geser"><?php echo $flm['nama_film']?></td>
                     </tr>
                     <tr>
                         <td>Jenis film</td>
-                        <td class="geser"><?php echo $film['jenis_film']?></td>
+                        <td class="geser"><?php echo $flm['jenis_film']?></td>
                     </tr>
                     <tr>
                         <td>Produser</td>
-                        <td class="geser"><?php echo $film['produser']; ?></td>
+                        <td class="geser"><?php echo $flm['produser']; ?></td>
                     </tr>
                     <tr>
                         <td>Sutradara</td>
-                        <td class="geser"><?php echo $film['sutradara']; ?></td>
+                        <td class="geser"><?php echo $flm['sutradara']; ?></td>
                     </tr>
                     <tr>
                         <td>Penulis</td>
-                        <td class="geser"><?php echo $film['penulis']; ?></td>
+                        <td class="geser"><?php echo $flm['penulis']; ?></td>
                     </tr>
                     <tr>
                         <td>Produksi</td>
-                        <td class="geser"><?php echo $film['produksi']; ?></td>
+                        <td class="geser"><?php echo $flm['produksi']; ?></td>
                     </tr>
                     <tr>
                         <td>Casts</td>
-                        <td class="geser"><?php echo $film['casts']; ?></td>
+                        <td class="geser"><?php echo $flm['casts']; ?></td>
                     </tr>
                     <tr>
                         <td>Durasi</td>
-                        <td class="geser"><?php echo $film['durasi']." menit"; ?></td>
+                        <td class="geser"><?php echo $flm['durasi']." menit"; ?></td>
                     </tr>
                     <tr>
                         <td>Penayangan</td>
-                        <td class="geser"><?php echo $film['penayangan']; ?></td>
+                        <td class="geser"><?php echo $flm['penayangan']; ?></td>
                     </tr>
                     <tr>
                         <td>Tanggal tayang</td>
-                        <td class="geser"><?php echo $film['tanggal_tayang']; ?></td>
+                        <td class="geser"><?php echo $flm['tanggal_tayang']; ?></td>
                     </tr>
                     <tr>
                         <td>Deskripsi</td>
-                        <td class="geser"><?php echo $film['deskripsi']; ?></td>
+                        <td class="geser"><?php echo $flm['deskripsi']; ?></td>
                     </tr>
                 </table>
                 <div class="buttons">
                     <a href="#" class="buy">pesan tiket</a>
                 </div>
             </div>
-        </div>
-        <?php  
+
+            <?php  
+            $i++;
             endforeach; }
         ?>
+        </div>
     </section>
     <footer>
         <section class=" footer">

@@ -36,7 +36,7 @@
             </div>
 
             <!-- tombol login -->
-            <input class="btn" type="submit" name="login" value="Login">
+            <input class="btn" type="submit" name="login" value="Login"></input>
         </form>
         <br>
         <h4><span>Atau</span></h4>
@@ -49,7 +49,6 @@
 </html>
 
 <?php 
-    
     require 'koneksi.php';
 
     if(isset($_POST['login'])){
@@ -59,24 +58,25 @@
         $query = "SELECT * FROM akun_user 
                 WHERE username='$user' 
                 OR email='$user'";   
-            
+        
         $result = $conn->query($query);
-        $row = mysqli_fetch_array($result);
-        $username = $row['username'];
-
-        if(password_verify($password,$row['psw'])){
-            session_start();
-            $_SESSION['login'] = true;
-
-
-            echo "<script>
+        if(mysqli_num_rows($result) > 0){
+            $row = mysqli_fetch_assoc($result);
+            $username = $row['username'];
+            if(password_verify($password,$row['psw'])){
+                session_start();
+                $_SESSION['login'] = true;
+    
+                echo "<script>
                         alert('selamat datang $username');
                         document.location.href = 'index.php';
                     </script>";
+            }
         }else{
             echo "<script>
-                        alert('username dan password salah');
+                    alert('username dan password salah');
                 </script>";
         }
+
     }
 ?>

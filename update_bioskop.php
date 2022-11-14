@@ -1,53 +1,30 @@
 <!-- update -->
 <?php
-
-    $id_film = $_GET['id_film'];
+    $id_bioskop = $_GET['id_bioskop'];
 
     if(isset($_POST['update'])){
         
-        $nama_film = htmlspecialchars($_POST['nama_film']);
-        $jenis_film = $_POST['jenis_film'];
-        $produser = htmlspecialchars($_POST['produser']);
-        $sutradara = htmlspecialchars($_POST['sutradara']);
-        $penulis = htmlspecialchars($_POST['penulis']);
-        $produksi = htmlspecialchars($_POST['produksi']);
-        $casts = htmlspecialchars($_POST['casts']);
-        $durasi = $_POST['durasi'];
-        $penayangan = htmlspecialchars($_POST['penayangan']);
-        $tanggal_tayang = $_POST['tanggal_tayang'];
-        $deskripsi = htmlspecialchars($_POST['deskripsi']);
-
-        // gambar1
-        $format_file = $_FILES['gambar_1']['name'];
-        $tmp_name = $_FILES['gambar_1']['tmp_name'];
-        $size = $_FILES['gambar_1']['size'];
-        $type = explode('.',$format_file);
-        $type2 = $type[1];
-        $rename = "$nama_film.$type2";
-        $format_foto = array('jpg', 'png', 'jpeg');
-        $max_size = 30000;
-
-        if($size < $max_size){
-            move_uploaded_file($tmp_name, 'gambar/'.$rename);
-            $sql = "UPDATE film  SET nama_film='$nama_film', jenis_film='$jenis_film', produser='$produser', sutradara='$sutradara', penulis='$penulis', produksi='$produksi', casts='$casts', durasi='$durasi', penayangan='$penayangan', tanggal_tayang='$tanggal_tayang', gambar_1='$rename', deskripsi='$deskripsi' WHERE id_film='$id_film'";
-            $result = mysqli_query($conn, $sql);
+        $nama_bioskop = htmlspecialchars($_POST['nama_bioskop']);
+        $jam_1 = $_POST['jam_1'];
+        $jam_2 = $_POST['jam_2'];
+        $jam_3 = $_POST['jam_3'];
+        $hari = htmlspecialchars($_POST['hari']);
+        $tanggal = htmlspecialchars($_POST['tanggal']);
 
         if ($result){
             echo "
             <script> 
-                alert ('data film diubah');
-                document.location.href = 'main_page_admin.php';
+                alert ('data bioskop diubah');
+                document.location.href = 'character.php';
             </script>";
         } else {
             echo "
             <script> 
                 alert ('gagal diubah');
-                document.location.href = 'update_film.php';
+                document.location.href = 'update_char.php';
             </script>";
         }
     }
-    }
-
 ?>
 
 
@@ -58,7 +35,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update film | TIX ID</title>
+    <title>Update bioskop | TIX ID</title>
     <script src="https://kit.fontawesome.com/6ce21f9da1.js" crossorigin="anonymous"></script>
     <script src="js/jquery.js"></script>
     <style>

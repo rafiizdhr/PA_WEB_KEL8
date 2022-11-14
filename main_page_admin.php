@@ -46,8 +46,8 @@
             <nav>
                 <ul>
                     <li><a href="main_page_admin.php">Home</a></li>
-                    <li><a href="tiket.php">Ticket</a></li>
-                    <li><a href="about.php">About</a></li>
+                    <li><a href="bioskop.php">Bioskop</a></li>
+                    <!-- <li><a href="#">About</a></li> -->
                     <li><a href="logout_admin.php">Logout</a></li>
                 </ul>
             </nav>
@@ -63,7 +63,6 @@
         })
     })
     </script>
-    <div class="kosong"></div>
     <div class="container">
         <h3>Daftar Film <a href="add_film.php" class="tambahdata">
                 <i style="font-size: 20px;" class="fa-solid fa-plus"></i>

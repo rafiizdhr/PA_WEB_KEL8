@@ -1,3 +1,14 @@
+<?php
+    require "koneksi.php";
+    $film = [];
+
+    $result = mysqli_query($conn, "SELECT * FROM film");
+    while($row = mysqli_fetch_assoc($result)){
+    $film[] = $row;
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,6 +51,19 @@
     })
     </script>
 
+    <section style="margin:auto;width:80%;">
+        <div class="tiket-table">
+            <?php if(isset($film)){foreach($film as $film):?>
+
+            <img width="180px" src="gambar/<?php echo $film['gambar_1']; ?>" alt="poster1">
+            <h4><?php echo $film['nama_film']; ?></h4>
+            <p><?php echo $film['jenis_film']; ?></p>
+            <p><?php echo $film['durasi']." menit"; ?></p>
+            <p><?php echo $film['deskripsi']; ?></p>
+
+            <?php endforeach; }?>
+        </div>
+    </section>
 
     <footer>
         <section class="footer">
@@ -47,12 +71,6 @@
                 <div class="copyright">
                     <p>copyright &copy <span>TIX ID</span></p>
                 </div>
-                <!-- <div class="socials">
-                    <i class="fab fa-facebook-square"></i>
-                    <i class="fab fa-youtube"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-pinterest"></i>
-                </div> -->
             </div>
         </section>
     </footer>
