@@ -79,56 +79,26 @@
                 </tr>
                 <tr>
 
-                    <td>Produser</td>
+                    <td>jam_1</td>
                     <td>:</td>
-                    <td><input type="time" name="produser"></td>
+                    <td><input type="time" name="jam_1"></td>
                 </tr>
                 <tr>
-                    <td>Sutradara</td>
+                    <td>$jam_2</td>
                     <td>:</td>
-                    <td><input type="text" name="sutradara"></td>
+                    <td><input type="time" name="jam_2"></td>
                 </tr>
                 <tr>
-                    <td>Penulis</td>
+                    <td>jam_3</td>
                     <td>:</td>
-                    <td><input type="text" name="penulis"></td>
+                    <td><input type="time" name="jam_3"></td>
                 </tr>
                 <tr>
-                    <td>Produksi</td>
+                    <td>Hari</td>
                     <td>:</td>
-                    <td><input type="text" name="produksi"></td>
+                    <td><input type="date" name="produksi"></td>
                 </tr>
-                <tr>
-                    <td>Casts</td>
-                    <td>:</td>
-                    <td><input type="text" name="casts"></input></td>
-                </tr>
-                <tr>
-                    <td>Durasi</td>
-                    <td>:</td>
-                    <td><input type="number" name="durasi"></td>
-                </tr>
-                <tr>
-                    <td>Penayangan</td>
-                    <td>:</td>
-                    <td><input type="text" name="penayangan"></td>
-                </tr>
-                <tr>
-                    <td>Tanggal tayang</td>
-                    <td>:</td>
-                    <td><input type="date" name="tanggal_tayang"></td>
-                </tr>
-                <tr>
-                    <td>Poster film</td>
-                    <td>:</td>
-                    <td><input type="file" name="gambar_1"></td>
-                </tr>
-                <tr>
-                    <td>Deskripsi</td>
-                    <td>:</td>
-                    <td><input type="text" name="deskripsi"></input></td>
-                </tr>
-                <tr>
+            
                     <td></td>
                     <td></td>
                     <td>
